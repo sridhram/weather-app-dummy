@@ -2,6 +2,9 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 const request = require('postman-request');
+const { env } = require('process');
+
+const port = env.PORT || 3000;
 
 const publicpath =  path.join(__dirname,'../public');
 
@@ -80,6 +83,6 @@ app.get('*', (req, res) => {
     })
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('app is running in port 3000');
 });
